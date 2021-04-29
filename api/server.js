@@ -5,8 +5,6 @@ require('dotenv').config();
 const PORT = process.env.PORT || 9999;
 const serverURI = 'http://localhost:' + PORT;
 const mongoURI = process.env.MONGO_URI;
-/* const mongoURI =
-  'mongodb+srv://Bengt:BytMig123@cluster0.zdkdk.mongodb.net/shop?retryWrites=true&w=majority'; */
 
 app.listen(PORT, () => console.log('Server running at :' + serverURI));
 
