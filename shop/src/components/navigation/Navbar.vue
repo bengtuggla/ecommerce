@@ -40,7 +40,10 @@
               <span class="badge rounded-pill badge-notification bg-danger">1</span>
            </a>
            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-            SHOOPING CART
+             <!-- Shoppingcart -->
+            <ul>
+              <ShoppingCart />
+            </ul>
            </ul>
          </li>
          <li class="nav-item dropdown">
@@ -66,7 +69,12 @@
 </template>
 
 <script>
+import ShoppingCart from '../shoppingCart/ShoppingCart'
 export default {
+  name: 'Navbar',
+  components:{
+    ShoppingCart
+  }
 
 }
 </script>
