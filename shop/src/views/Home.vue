@@ -40,12 +40,15 @@
         class="d-block w-100 "
         alt="..."
       />
-      <div class="carousel-caption d-block ">
-        <h2 class="bg-dark">NITROX DIVESHOP</h2>
-        <p class="bg-light text-dark">FIND YOUR QUALITY EQUIPMENT HERE</p>
+      
+      <div class="carousel-caption d-block w-60 ">
+         <router-link class="nav-link active text-white" aria-current="page" to="/products">
+        <h2 class="bg-dark w-50">NITROX DIVESHOP</h2>
+        <p class="bg-light text-dark w-50">FIND YOUR QUALITY EQUIPMENT HERE</p></router-link>
+       <!--  <div class="d-flex justify-content-center"><button class="btn btn-primary">PRODUCTS</button></div> -->
       </div>
     </div>
-
+    
     <!-- Single item -->
     <div class="carousel-item">
       <img
@@ -54,8 +57,8 @@
         alt="..."
       />
        <div class="carousel-caption d-block ">
-        <h2 class="bg-dark">NITROX DIVESHOP</h2>
-        <p class="bg-light text-dark">FIND YOUR QUALITY EQUIPMENT HERE</p>
+        <h2 class="bg-dark w-50">NITROX DIVESHOP</h2>
+        <p class="bg-light text-dark w-50">FIND YOUR QUALITY EQUIPMENT HERE</p>
       </div>
     </div>
 
@@ -67,8 +70,8 @@
         alt="..."
       />
       <div class="carousel-caption d-block ">
-        <h2 class="bg-dark">NITROX DIVESHOP</h2>
-        <p class="bg-light text-dark">FIND YOUR QUALITY EQUIPMENT HERE</p>
+        <h2 class="bg-dark w-50">NITROX DIVESHOP</h2>
+        <p class="bg-light text-dark w-50">FIND YOUR QUALITY EQUIPMENT HERE</p>
       </div>
     </div>
   </div>
@@ -116,5 +119,11 @@ body{
 }
 .container{
   margin-top: 0 !important;
+}
+.carousel-caption{
+  top: 10%;
+  left: 5%;
+  transform: translateY(-50%);
+  bottom: initial;
 }
 </style>
