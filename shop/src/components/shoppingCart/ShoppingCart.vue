@@ -25,6 +25,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+
 import ShoppingCartProduct from './ShoppingCartProduct'
 export default {
  name: 'ShoppingCart',
@@ -33,7 +34,8 @@ export default {
  },
  computed:{
   ...mapGetters(['shoppingCart', 'shoppingCartTotal'])
- }
+ },
+
 
 }
 </script>

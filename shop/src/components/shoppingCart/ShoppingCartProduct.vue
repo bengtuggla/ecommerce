@@ -13,10 +13,10 @@
 
     <div>
      <div class="btn btn-group btn-group-sm me-2" role="group">
-      <button class="btn btn-dark" @click.stop="">+</button>
-      <button class="btn btn-dark" @click.stop="">-</button>
+      <button class="btn btn-dark"  @click.stop="addProductToCart({product, quantity})">+</button>
+      <button  class="btn btn-dark"  @click.stop="subProductFromCart({product, quantity})">-</button>
       <button class="btn btn-danger btn-sm" @click.stop=""><i class="fas fa-trash"></i></button>
-     </div>
+     </div> 
      
     </div>
 
@@ -25,8 +25,22 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 export default {
- props: ['item']
+ data(){
+  return{
+   quantity: 1
+  }
+ },
+ props: ['item'],
+  methods: {
+  ...mapActions(['subProductFromCart', 'addProductToCart'])
+ 
+},
+computed:{
+ ...mapGetters(['product'])
+}
+  
 }
 </script>
 
