@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div v-if="product" class="container my-5 py-5">
+    <div v-if="product" class="container my-5 py-5 text-white">
      <section class="text-center">
         <h3 class="mb-5 font-weight-bold">Product Details</h3>
         <div class="row">
            <div class="col-lg-6">
-            <img :src="product.image" alt="product image" class="img-fluid">
+            <img :src="product.image" alt="product image" class="img-fluid rounded shadow-lg">
            </div>
            <div class="col-lg-6 text-center text-lg-start">
             <h2 class="text-center font-weight-bold my-5">{{product.name}}</h2>
@@ -15,8 +15,8 @@
               <p>{{product.desc}}</p>
              </div>
              <div>
-              <h3 class="text-danger">{{product.price}}<span> SEK</span></h3>
-              <button class="btn btn-primary">Add to cart</button>
+              <h3 class="text-warning">{{product.price}}<span> SEK</span></h3>
+              <button class="btn btn-primary" @click="addProductToCart({product, quantity})">Add to cart</button>
              </div>
             
            </div>
@@ -35,12 +35,19 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
 
 name: 'ProductDetails',
+data(){
+ return {
+  quantity: 1
+ }
+},
+
 props: ['id'],
 computed:{
  ...mapGetters(['product'])
 },
 methods: {
- ...mapActions(['getOneProduct', 'cleanup'])
+ ...mapActions(['getOneProduct', 'cleanup',
+ 'addProductToCart'])
 },
 created(){
  this.getOneProduct(this.id)

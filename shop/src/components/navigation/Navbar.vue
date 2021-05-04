@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-4">
     <div class="container">
       <router-link class="navbar-brand" to="/"><img src="../../assets/nitroxlogo2.png" alt="Logo"></router-link>
       <button
@@ -37,13 +37,13 @@
              aria-expanded="false"
            >
              <i class="fas fa-shopping-cart"></i>
-              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+              <span v-show="cartItemCount" class="badge rounded-pill badge-notification bg-danger">{{cartItemCount}}</span>
            </a>
-           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+           <ul class="dropdown-menu dropdown-menu-end shopping-cart" aria-labelledby="navbarDropdown">
              <!-- Shoppingcart -->
-            <ul>
+           <!--  <ul class="shopping-cart"> -->
               <ShoppingCart />
-            </ul>
+            <!-- </ul> -->
            </ul>
          </li>
          <li class="nav-item dropdown">
@@ -69,16 +69,27 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import ShoppingCart from '../shoppingCart/ShoppingCart'
 export default {
   name: 'Navbar',
   components:{
     ShoppingCart
+  },
+  computed: {
+    ...mapGetters(['cartItemCount'])
   }
 
 }
 </script>
 
-<style>
+<style scoped>
+.shopping-cart{
+  min-width: 480px;
+  max-width: auto;
+  border: 1px solid rgba(173, 169, 169, 0.623);
+  border-radius: 5px;
+  box-shadow: 3px 2px #88888844;
+}
 
 </style>
