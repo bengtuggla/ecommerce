@@ -14,7 +14,7 @@
     <div>
      <div class="btn btn-group btn-group-sm me-2" role="group">
       <button class="btn btn-dark"  @click.stop="addProductToCart({product, quantity})">+</button>
-      <button  class="btn btn-dark"  @click.stop="subProductFromCart({product, quantity})">-</button>
+      <button v-if="item.quantity > 0" class="btn btn-dark"  @click.stop="subProductFromCart({product, quantity})">-</button>
       <button class="btn btn-danger btn-sm" @click.stop=""><i class="fas fa-trash"></i></button>
      </div> 
      

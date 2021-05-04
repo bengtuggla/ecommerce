@@ -17,6 +17,7 @@ export default{
      let total = 0
      if(state.cart.length !==0){
        state.cart.forEach(item=>{
+         if(item.quantity > 0)
          total += item.product.price * item.quantity
        })
      }
